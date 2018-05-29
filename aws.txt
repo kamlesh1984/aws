@@ -1,0 +1,2 @@
+AWS-WP-SG
+aws cloudformation describe-stacks --stack-name nate-test --output table
