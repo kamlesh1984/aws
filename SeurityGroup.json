@@ -40,18 +40,28 @@
 				]
 			}
 		},
-		{
-		"EC2Instancepub-1" : {
+		
+		"EC2Instancepub1" : {
 			"Type" : "AWS::EC2::Instance",
 			"Properties" : {
-            "ImageId" : "ami-e251209a",
-            "KeyName" : "awspoc",
-			"InstanceType" : "t2.micro",
-			"SecurityGroups" : [ "Ref": "WebSecurityGroup" ],
-			"Tags": [{ "Key": "Name", "Value": "EC2Instancepub-1"}],
-			"SubnetId" : { "Fn::ImportValue" : {"Fn::Sub" : "${VpcName}-Pubnet1ID"} }
-            }
+				"ImageId" : "ami-e251209a",
+				"KeyName" : "awspoc",
+				"InstanceType" : "t2.micro",
+				"Tags": [{ "Key": "Name", "Value": "EC2Instancepub1"}],
+				"SubnetId" : { "Fn::ImportValue" : {"Fn::Sub" : "${VpcName}-Pubnet1ID"} }
+				
+				}
+          },"EC2Instancepub2" : {
+			"Type" : "AWS::EC2::Instance",
+			"Properties" : {
+				"ImageId" : "ami-e251209a",
+				"KeyName" : "awspoc",
+				"InstanceType" : "t2.micro",
+				"Tags": [{ "Key": "Name", "Value": "EC2Instancepub2"}],
+				"SubnetId" : { "Fn::ImportValue" : {"Fn::Sub" : "${VpcName}-Pubnet2ID"} }
+				
+				}
           }
-      }
+      
    }
 }      
