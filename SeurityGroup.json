@@ -1,10 +1,10 @@
 {
 	"AWSTemplateFormatVersion": "2010-09-09",
 	"Parameters": {
-		"NetworkStackName": {
+		"VpcName": {
 			"Description": "VPC Name",
 			"Type": "String",
-			"Default": "AWS-WP-POC"
+			"Default": "WP-VPC"
 		}
 	},
 	"Resources": {
@@ -13,7 +13,7 @@
 			"Properties": {
 				"GroupDescription": "Web server",
 				"GroupName": "web",
-				"GroupSet": [{"Fn::ImportValue" : {"Fn::Sub" : "${NetworkStackName}-VPCID"}}],
+				"VpcId": { "Fn::ImportValue" : {"Fn::Sub" : "${VpcName}-VPCID"} },
 				"SecurityGroupIngress": [
 					{
 						"IpProtocol": "tcp",
@@ -29,7 +29,7 @@
 			"Properties": {
 				"GroupDescription": "Database server",
 				"GroupName": "database",
-				"GroupSet": [{"Fn::ImportValue" : {"Fn::Sub" : "${NetworkStackName}-VPCID"}}],
+				"VpcId": {"Fn::ImportValue" : {"Fn::Sub" : "${VpcName}-VPCID"}},
 				"SecurityGroupIngress": [
 					{
 						"IpProtocol": "tcp",
@@ -39,6 +39,19 @@
 					}
 				]
 			}
-		}
-	}
-}
+		},
+		{
+		"EC2Instancepub-1" : {
+			"Type" : "AWS::EC2::Instance",
+			"Properties" : {
+            "ImageId" : "ami-e251209a",
+            "KeyName" : "awspoc",
+			"InstanceType" : "t2.micro",
+			"SecurityGroups" : [ "Ref": "WebSecurityGroup" ],
+			"Tags": [{ "Key": "Name", "Value": "EC2Instancepub-1"}],
+			"SubnetId" : { "Fn::ImportValue" : {"Fn::Sub" : "${VpcName}-Pubnet1ID"} }
+            }
+          }
+      }
+   }
+}      

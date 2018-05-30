@@ -1,0 +1,20 @@
+{
+    "AWSTemplateFormatVersion" : "2010-09-09",
+    "Resources" : {
+        "AWSWPVPC" : {
+	       "Type" : "AWS::CloudFormation::Stack",
+	       "Properties" : {
+	          "TemplateURL" : "https://s3-us-west-2.amazonaws.com/wp-poc-sapient/VpcFormation.json",
+              "TimeoutInMinutes" : "60"
+	       }
+        },
+		"AWSWPSG" : {
+			"Type" : "AWS::CloudFormation::Stack",
+			"Properties" : {
+	          "TemplateURL" : "https://s3-us-west-2.amazonaws.com/wp-poc-sapient/SeurityGroup.json",
+              "TimeoutInMinutes" : "60"
+	       }
+		}
+    }
+    
+}

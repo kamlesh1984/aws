@@ -1,2 +1,61 @@
 AWS-WP-SG
 aws cloudformation describe-stacks --stack-name nate-test --output table
+
+
+"Export" : { "Name" : {"Fn::Sub": "${AWS::StackName}-VPCID" }}
+
+ it push  origin master
+Fatal: HttpRequestException encountered.
+Username for 'https://github.com': kamlesh1984
+password:computer@12
+
+
+kamleshsingh.it@gmail.com
+
+git config --global user.email "kamleshsingh.it@gmail.com"
+
+=============
+
+create a new repository on the command line
+echo "# aws" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/kamlesh1984/aws.git
+git push -u origin master
+…or push an existing repository from the command line
+git remote add origin https://github.com/kamlesh1984/aws.git
+git push -u origin master
+
+====================
+$ git config --global user.email "kamleshsingh.it@gmail.com"
+
+kamsingh@WKWIN8046875 MINGW64 /d/aws_cloud_formation (master)
+$ git commit -m "first commit"
+[master (root-commit) aa0cf36] first commit
+warning: LF will be replaced by CRLF in vpc_cloudformation_template.yml.
+The file will have its original line endings in your working directory.
+ 5 files changed, 841 insertions(+)
+ create mode 100644 SeurityGroup.json
+ create mode 100644 VPC-Formation.json
+ create mode 100644 aws.txt
+ create mode 100644 vpc_cloudformation_template.yml
+ create mode 100644 vpcpoc.json
+
+kamsingh@WKWIN8046875 MINGW64 /d/aws_cloud_formation (master)
+$ git remote add origin https://github.com/kamlesh1984/aws.git
+
+kamsingh@WKWIN8046875 MINGW64 /d/aws_cloud_formation (master)
+$ git push -u origin master
+Fatal: AggregateException encountered.
+Username for 'https://github.com': kamlesh1984
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 3.92 KiB | 0 bytes/s, done.
+Total 7 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/kamlesh1984/aws.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+================================
